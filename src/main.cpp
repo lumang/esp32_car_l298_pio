@@ -6,11 +6,8 @@
 #define Y_AXIS_PIN 33
 #define SWITCH_PIN 25
 
-// 把上一步中，“接收端”的mac地址，按照这个格式，替代一下！！！！
-// 把上一步中，“接收端”的mac地址，按照这个格式，替代一下！！！！
-// 把上一步中，“接收端”的mac地址，按照这个格式，替代一下！！！！
 
-uint8_t receiverMacAddress[] = {0xC0,0x49,0xEF,0xB4,0x4E,0xE0};  //30:AE:A4:45:D6:4C //C0:49:EF:B4:4E:E0
+uint8_t receiverMacAddress[] = {0xC0,0x49,0xEF,0xB4,0xFF,0xFF};  // REPALCE MAC BY YOURSELF
 
 struct PacketData
 {
@@ -19,7 +16,7 @@ struct PacketData
   byte switchPressed;
 };
 PacketData data;
-esp_now_peer_info_t peerInfo;
+esp_now_peer_info_t peerInfo;// global variable
 
 
 //This function is used to map 0-4095 joystick value to 0-254. hence 127 is the center value which we send.
